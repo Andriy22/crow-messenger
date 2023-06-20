@@ -1,0 +1,205 @@
+2023-01-20 19:46:36.893 +02:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-01-20 19:46:36.995 +02:00 [INF] Executed DbCommand (55ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-01-20 19:46:37.083 +02:00 [INF] User profile is available. Using 'C:\Users\istep\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-01-20 19:46:37.447 +02:00 [INF] Now listening on: https://localhost:7196
+2023-01-20 19:46:37.447 +02:00 [INF] Now listening on: http://localhost:5095
+2023-01-20 19:46:37.448 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-20 19:46:37.448 +02:00 [INF] Hosting environment: Development
+2023-01-20 19:46:37.448 +02:00 [INF] Content root path: C:\Users\istep\source\repos\backend\API
+2023-01-20 19:46:38.427 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger - -
+2023-01-20 19:46:38.495 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger - - - 301 0 - 69.3398ms
+2023-01-20 19:46:38.544 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/index.html - -
+2023-01-20 19:46:38.812 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/index.html - - - 200 - text/html;charset=utf-8 267.7719ms
+2023-01-20 19:46:38.820 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/swagger-ui.css - -
+2023-01-20 19:46:38.821 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/swagger-ui-bundle.js - -
+2023-01-20 19:46:38.821 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/swagger-ui-standalone-preset.js - -
+2023-01-20 19:46:38.823 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - -
+2023-01-20 19:46:38.854 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_vs/browserLink - -
+2023-01-20 19:46:38.862 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 39.1856ms
+2023-01-20 19:46:38.892 +02:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-01-20 19:46:38.892 +02:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-01-20 19:46:38.893 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/swagger-ui.css - - - 200 143943 text/css 72.7115ms
+2023-01-20 19:46:38.893 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/swagger-ui-standalone-preset.js - - - 200 339486 text/javascript 71.9447ms
+2023-01-20 19:46:38.922 +02:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-01-20 19:46:38.923 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/swagger-ui-bundle.js - - - 200 1096145 text/javascript 102.0367ms
+2023-01-20 19:46:38.963 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 109.2097ms
+2023-01-20 19:46:39.076 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - -
+2023-01-20 19:46:39.104 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/favicon-32x32.png - -
+2023-01-20 19:46:39.104 +02:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-01-20 19:46:39.105 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/favicon-32x32.png - - - 200 628 image/png 0.8235ms
+2023-01-20 19:46:39.183 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 107.3544ms
+2023-01-20 19:46:45.172 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/WeatherForecast - -
+2023-01-20 19:46:45.179 +02:00 [INF] Executing endpoint 'API.Controllers.WeatherForecastController.Get (API)'
+2023-01-20 19:46:45.190 +02:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast", page = "", area = ""}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[API.WeatherForecast] Get() on controller API.Controllers.WeatherForecastController (API).
+2023-01-20 19:46:45.195 +02:00 [INF] Executing ObjectResult, writing value of type 'API.WeatherForecast[]'.
+2023-01-20 19:46:45.208 +02:00 [INF] Executed action API.Controllers.WeatherForecastController.Get (API) in 14.3113ms
+2023-01-20 19:46:45.208 +02:00 [INF] Executed endpoint 'API.Controllers.WeatherForecastController.Get (API)'
+2023-01-20 19:46:45.209 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/WeatherForecast - - - 200 - application/json;+charset=utf-8 36.9898ms
+2023-01-20 19:54:54.131 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-01-20 19:54:54.204 +02:00 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-01-20 19:54:54.297 +02:00 [INF] User profile is available. Using 'C:\Users\istep\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-01-20 19:54:54.555 +02:00 [INF] Now listening on: https://localhost:7196
+2023-01-20 19:54:54.555 +02:00 [INF] Now listening on: http://localhost:5095
+2023-01-20 19:54:54.556 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-20 19:54:54.556 +02:00 [INF] Hosting environment: Development
+2023-01-20 19:54:54.556 +02:00 [INF] Content root path: C:\Users\istep\source\repos\backend\API
+2023-01-20 19:54:55.267 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/index.html - -
+2023-01-20 19:54:55.474 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/index.html - - - 200 - text/html;charset=utf-8 208.2389ms
+2023-01-20 19:54:55.489 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_vs/browserLink - -
+2023-01-20 19:54:55.489 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - -
+2023-01-20 19:54:55.499 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 10.4212ms
+2023-01-20 19:54:55.531 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 41.9452ms
+2023-01-20 19:54:55.686 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - -
+2023-01-20 19:54:55.790 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 104.0782ms
+2023-01-20 19:55:40.364 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-01-20 19:55:40.428 +02:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-01-20 19:55:40.522 +02:00 [INF] User profile is available. Using 'C:\Users\istep\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-01-20 19:55:40.801 +02:00 [INF] Now listening on: https://localhost:7196
+2023-01-20 19:55:40.801 +02:00 [INF] Now listening on: http://localhost:5095
+2023-01-20 19:55:40.802 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-20 19:55:40.802 +02:00 [INF] Hosting environment: Development
+2023-01-20 19:55:40.802 +02:00 [INF] Content root path: C:\Users\istep\source\repos\backend\API
+2023-01-20 19:55:41.852 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/index.html - -
+2023-01-20 19:55:42.145 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/index.html - - - 200 - text/html;charset=utf-8 295.2340ms
+2023-01-20 19:55:42.167 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_vs/browserLink - -
+2023-01-20 19:55:42.167 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - -
+2023-01-20 19:55:42.181 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 14.0841ms
+2023-01-20 19:55:42.211 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 44.7339ms
+2023-01-20 19:55:42.270 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - -
+2023-01-20 19:55:42.385 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 114.7590ms
+2023-01-20 19:55:46.460 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/Auth/authorize application/json 47
+2023-01-20 19:55:46.467 +02:00 [INF] CORS policy execution successful.
+2023-01-20 19:55:46.472 +02:00 [INF] Executing endpoint 'API.Controllers.AuthController.Authorization (API)'
+2023-01-20 19:55:46.490 +02:00 [INF] Route matched with {action = "Authorization", controller = "Auth", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Authorization(API.Models.AuthorizationDTO) on controller API.Controllers.AuthController (API).
+2023-01-20 19:55:46.557 +02:00 [INF] Executing OkObjectResult, writing value of type 'API.Models.AuthorizationDTO'.
+2023-01-20 19:55:46.565 +02:00 [INF] Executed action API.Controllers.AuthController.Authorization (API) in 70.9248ms
+2023-01-20 19:55:46.565 +02:00 [INF] Executed endpoint 'API.Controllers.AuthController.Authorization (API)'
+2023-01-20 19:55:46.566 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/Auth/authorize application/json 47 - 200 - application/json;+charset=utf-8 106.4888ms
+2023-01-20 19:56:29.913 +02:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-01-20 19:56:29.999 +02:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-01-20 19:56:30.092 +02:00 [INF] User profile is available. Using 'C:\Users\istep\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-01-20 19:56:30.335 +02:00 [INF] Now listening on: https://localhost:7196
+2023-01-20 19:56:30.335 +02:00 [INF] Now listening on: http://localhost:5095
+2023-01-20 19:56:30.337 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-20 19:56:30.337 +02:00 [INF] Hosting environment: Development
+2023-01-20 19:56:30.337 +02:00 [INF] Content root path: C:\Users\istep\source\repos\backend\API
+2023-01-20 19:56:31.131 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/index.html - -
+2023-01-20 19:56:31.343 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/index.html - - - 200 - text/html;charset=utf-8 212.1323ms
+2023-01-20 19:56:31.358 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - -
+2023-01-20 19:56:31.362 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_vs/browserLink - -
+2023-01-20 19:56:31.370 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 12.0851ms
+2023-01-20 19:56:31.403 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 41.0425ms
+2023-01-20 19:56:31.474 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - -
+2023-01-20 19:56:31.584 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 109.5734ms
+2023-01-20 19:56:34.508 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/Auth/authorize application/json 47
+2023-01-20 19:56:34.515 +02:00 [INF] CORS policy execution successful.
+2023-01-20 19:56:34.519 +02:00 [INF] Executing endpoint 'API.Controllers.AuthController.Authorization (API)'
+2023-01-20 19:56:34.533 +02:00 [INF] Route matched with {action = "Authorization", controller = "Auth", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Authorization(API.Models.AuthorizationDTO) on controller API.Controllers.AuthController (API).
+2023-01-20 19:56:34.573 +02:00 [INF] Executing OkObjectResult, writing value of type 'API.Models.AuthorizationDTO'.
+2023-01-20 19:56:34.580 +02:00 [INF] Executed action API.Controllers.AuthController.Authorization (API) in 43.6903ms
+2023-01-20 19:56:34.580 +02:00 [INF] Executed endpoint 'API.Controllers.AuthController.Authorization (API)'
+2023-01-20 19:56:34.581 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/Auth/authorize application/json 47 - 200 - application/json;+charset=utf-8 73.4977ms
+2023-01-20 19:56:49.359 +02:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-01-20 19:56:49.447 +02:00 [INF] Executed DbCommand (31ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2023-01-20 19:56:49.561 +02:00 [INF] User profile is available. Using 'C:\Users\istep\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-01-20 19:56:49.916 +02:00 [INF] Now listening on: https://localhost:7196
+2023-01-20 19:56:49.916 +02:00 [INF] Now listening on: http://localhost:5095
+2023-01-20 19:56:49.924 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-01-20 19:56:49.925 +02:00 [INF] Hosting environment: Development
+2023-01-20 19:56:49.925 +02:00 [INF] Content root path: C:\Users\istep\source\repos\backend\API
+2023-01-20 19:56:50.649 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/index.html - -
+2023-01-20 19:56:50.862 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/index.html - - - 200 - text/html;charset=utf-8 214.4260ms
+2023-01-20 19:56:50.871 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_vs/browserLink - -
+2023-01-20 19:56:50.871 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - -
+2023-01-20 19:56:50.880 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_framework/aspnetcore-browser-refresh.js - - - 200 11976 application/javascript;+charset=utf-8 9.1003ms
+2023-01-20 19:56:50.905 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 34.1193ms
+2023-01-20 19:56:50.988 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - -
+2023-01-20 19:56:51.067 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7196/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 79.3232ms
+2023-01-20 19:56:54.116 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7196/api/Auth/authorize application/json 47
+2023-01-20 19:56:54.122 +02:00 [INF] CORS policy execution successful.
+2023-01-20 19:56:54.128 +02:00 [INF] Executing endpoint 'API.Controllers.AuthController.Authorization (API)'
+2023-01-20 19:56:54.141 +02:00 [INF] Route matched with {action = "Authorization", controller = "Auth", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Authorization(API.Models.AuthorizationDTO) on controller API.Controllers.AuthController (API).
+2023-01-20 19:56:54.181 +02:00 [INF] Executing OkObjectResult, writing value of type 'API.Models.AuthorizationDTO'.
+2023-01-20 19:56:54.187 +02:00 [INF] Executed action API.Controllers.AuthController.Authorization (API) in 42.5471ms
+2023-01-20 19:56:54.187 +02:00 [INF] Executed endpoint 'API.Controllers.AuthController.Authorization (API)'
+2023-01-20 19:56:54.188 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7196/api/Auth/authorize application/json 47 - 200 - application/json;+charset=utf-8 71.8624ms
