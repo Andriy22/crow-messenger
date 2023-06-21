@@ -9,6 +9,6 @@ namespace Domain
         public required DateTime RegistrationDate { get; set; }
         public required DateTime LastLoginDate { get; set; }
         public Attachment? ProfilePicture { get; set; }
-        public bool AllowForward { get; set; } 
-    } 
+        public bool AllowForward { get; set; }
+    }
 }
