@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Client.Data;
 
 namespace Client;
 
@@ -12,12 +13,16 @@ public static class MauiProgram
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
+		builder.Services.AddMauiBlazorWebView();
+
 #if DEBUG
+		builder.Services.AddBlazorWebViewDeveloperTools();
 		builder.Logging.AddDebug();
 #endif
+
+		builder.Services.AddSingleton<WeatherForecastService>();
 
 		return builder.Build();
 	}
