@@ -17,7 +17,7 @@ namespace Persistence
             context.Roles.Add(new IdentityRole { Name = UserRoleConstants.UserRole, NormalizedName = ChatRoleConstants.UserRole.ToUpper() });
             context.Roles.Add(new IdentityRole { Name = UserRoleConstants.AdminRole, NormalizedName = ChatRoleConstants.AdminRole.ToUpper() });
 
-            context.SaveChanges();
+            // context.SaveChanges();
         }
     }
 }

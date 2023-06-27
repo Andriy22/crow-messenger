@@ -13,6 +13,7 @@ namespace Application.Interfaces
         DbSet<ChatBase> Chats { get; set; }
         DbSet<ChatRole> ChatRoles { get; set; }
         DbSet<UserChat> UserChats { get; set; }
+        DbSet<AuthorizedDevice> AuthorizedDevices { get; set; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }

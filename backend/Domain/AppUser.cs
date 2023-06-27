@@ -10,5 +10,11 @@ namespace Domain
         public required DateTime LastLoginDate { get; set; }
         public Attachment? ProfilePicture { get; set; }
         public bool AllowForward { get; set; }
+        public virtual ICollection<AuthorizedDevice> AuthorizedDevices { get; set; }
+
+        public AppUser()
+        {
+            AuthorizedDevices = new HashSet<AuthorizedDevice>();
+        }
     }
 }
