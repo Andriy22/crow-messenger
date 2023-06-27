@@ -15,6 +15,7 @@ namespace Persistence
         public DbSet<ChatBase> Chats { get; set; }
         public DbSet<ChatRole> ChatRoles { get; set; }
         public DbSet<UserChat> UserChats { get; set; }
+        public DbSet<AuthorizedDevice> AuthorizedDevices { get; set; }
 
         public DataContext(DbContextOptions<DataContext> options)
             : base(options) { }

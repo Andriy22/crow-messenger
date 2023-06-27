@@ -8,7 +8,7 @@ namespace Application.Common.Behaviors
            : IPipelineBehavior<TRequest, TResponse> where TRequest
            : IRequest<TResponse>
     {
-        ICurrentUserService _currentUserService;
+        private readonly ICurrentUserService _currentUserService;
 
         public LoggingBehavior(ICurrentUserService currentUserService) =>
             _currentUserService = currentUserService;

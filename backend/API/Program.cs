@@ -1,4 +1,5 @@
 using API.Middleware;
+using API.Services;
 using Application;
 using Application.Common.Mappings;
 using Application.Interfaces;
@@ -47,9 +48,13 @@ builder.Services.AddCors(options =>
 
 builder.Host.UseSerilog(logger);
 
+builder.Services.AddScoped<IAccountService, AccountService>();
+builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
+builder.Services.AddScoped<IJWTService, JWTService>();
+builder.Services.AddScoped<IRazorRenderService, RazorRenderService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
 
 var app = builder.Build();
-
 
 using (var scope = app.Services.CreateScope())
 {
@@ -64,7 +69,6 @@ using (var scope = app.Services.CreateScope())
         throw;
     }
 }
-
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
