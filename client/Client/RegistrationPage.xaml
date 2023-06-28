@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Client.RegistrationPage"
+             xmlns:mdc="clr-namespace:Material.Components.Maui;assembly=Material.Components.Maui">
+    <VerticalStackLayout>
+        <mdc:Label Text="REGISTER NEW USER" Margin="5"></mdc:Label>
+        
+        <VerticalStackLayout 
+            x:Name="NameAndPasswordPanel"  
+            IsVisible="True">
+            
+            <mdc:TextField 
+                x:Name="UserNameField"
+                LabelText="UserName" 
+                SupportingText="" 
+                Margin="5"/>
+            
+            <mdc:TextField 
+                x:Name="PasswordField"
+                LabelText="Password"
+                SupportingText="" 
+                Margin="5"/>
+            
+            <mdc:TextField 
+                x:Name="RepeatPasswordField"
+                LabelText="Repeat Password" 
+                SupportingText="" 
+                Margin="5"/>
+            
+            <HorizontalStackLayout>
+                <mdc:Button 
+                    Text="Next" 
+                    Margin="5" 
+                    Clicked="InputNameAndPassword"/>
+            </HorizontalStackLayout>
+            
+        </VerticalStackLayout>
+        <VerticalStackLayout 
+            x:Name="EmailPanel" 
+            IsVisible="False">
+
+            <mdc:TextField 
+                LabelText="E-mail" 
+                SupportingText=""
+                Margin="5"/>
+            
+            <HorizontalStackLayout>
+                <mdc:Button 
+                    Text="Next" 
+                    Margin="5" 
+                    Clicked="InputEmail"/>
+            </HorizontalStackLayout>
+            
+        </VerticalStackLayout>
+        <VerticalStackLayout 
+            x:Name="LastPanel" 
+            IsVisible="False">
+            
+            <HorizontalStackLayout IsVisible="False">
+                <mdc:Button 
+                    Text="Proceed" 
+                    Margin="5" 
+                    Clicked="EndRegistration"/>
+            </HorizontalStackLayout>
+            
+        </VerticalStackLayout>
+        
+    </VerticalStackLayout>
+</ContentPage>

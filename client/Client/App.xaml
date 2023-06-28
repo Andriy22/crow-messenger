@@ -10,9 +10,9 @@
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
 
-                <!--<mds:MaterialStyles />-->
+                <mds:MaterialStyles />
 
-                <mds:MaterialStyles Dark="HotPink" Light="Green" />
+                <!--<mds:MaterialStyles Dark="HotPink" Light="Green" />-->
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
