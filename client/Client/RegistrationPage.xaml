@@ -41,6 +41,7 @@
             IsVisible="False">
 
             <mdc:TextField 
+				x:Name="EmailField"
                 LabelText="E-mail" 
                 SupportingText=""
                 Margin="5"/>
@@ -56,8 +57,10 @@
         <VerticalStackLayout 
             x:Name="LastPanel" 
             IsVisible="False">
-            
-            <HorizontalStackLayout IsVisible="False">
+
+			<mdc:Label x:Name="DebugLabel" Text="REGISTER NEW USER" Margin="5"></mdc:Label>
+
+			<HorizontalStackLayout IsVisible="False">
                 <mdc:Button 
                     Text="Proceed" 
                     Margin="5" 
