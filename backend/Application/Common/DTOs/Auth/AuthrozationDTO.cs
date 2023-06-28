@@ -1,3 +1,14 @@
-﻿namespace Application.Common.DTOs.Auth;
+﻿using Application.Common.DTOs.Base;
 
-public record AuthorizationDTO (string Email, string Password);
+namespace Application.Common.DTOs.Auth;
+
+public record AuthorizationDTO(string Email,
+    string Password,
+    string? DeviceName, 
+    string DeviceId, 
+    string? DeviceType, 
+    string? DeviceOS, 
+    string? DeviceOSVersion, 
+    string? DeviceAppVersion, 
+    string? DeviceAppBuildNumber) : 
+    BaseDeviceInfoDTO(DeviceName, DeviceId, DeviceType, DeviceOS, DeviceOSVersion, DeviceAppVersion, DeviceAppBuildNumber);

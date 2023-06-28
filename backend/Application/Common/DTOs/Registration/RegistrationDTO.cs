@@ -2,30 +2,15 @@
 
 namespace Application.Common.DTOs.Registration
 {
-    public record RegistrationDTO : BaseDeviceInfoDTO
-    {
-        public string NickName { get; init; }
-        public string Email { get; init; }
-        public string Password { get; init; }
-        public string ConfirmPassword { get; init; }
-
-        public RegistrationDTO(string? deviceName,
-            string deviceId,
-            string? deviceType,
-            string? deviceOS,
-            string? deviceOSVersion,
-            string? deviceAppVersion,
-            string? deviceAppBuildNumber,
-            string nickName,
-            string email,
-            string password,
-            string confirmPassword) :
-            base(deviceName, deviceId, deviceType, deviceOS, deviceOSVersion, deviceAppVersion, deviceAppBuildNumber)
-        {
-            NickName = nickName;
-            Email = email;
-            Password = password;
-            ConfirmPassword = confirmPassword;
-        }
-    }
+    public record RegistrationDTO(string NickName,
+        string Email,
+        string Password,
+        string? DeviceName,
+        string DeviceId, 
+        string? DeviceType, 
+        string? DeviceOS,
+        string? DeviceOSVersion, 
+        string? DeviceAppVersion, 
+        string? DeviceAppBuildNumber) : 
+        BaseDeviceInfoDTO(DeviceName, DeviceId, DeviceType, DeviceOS, DeviceOSVersion, DeviceAppVersion, DeviceAppBuildNumber);
 }
